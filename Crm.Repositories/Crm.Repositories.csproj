@@ -15,4 +15,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Crm.Models\Crm.Models.csproj" />
+  </ItemGroup>
+
 </Project>

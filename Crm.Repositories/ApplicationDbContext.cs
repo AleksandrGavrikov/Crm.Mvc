@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Crm.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -14,5 +15,6 @@ namespace Crm.Repositories
         {
 
         }
+        public DbSet<ApplicationUser>ApplicationUsers { get; set; }
     }
 }
