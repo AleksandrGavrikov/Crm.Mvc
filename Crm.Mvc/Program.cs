@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Crm.Utilities;
 using Crm.Repositories.Implementation;
 using Crm.Repositories.Interfaces;
+using Microsoft.AspNetCore.Identity.UI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,7 +18,9 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>()
 
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IEmailSender, EmailSender>();
 builder.Services.AddRazorPages();
+
 
 var app = builder.Build();
 
