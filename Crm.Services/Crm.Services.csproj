@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Crm.Utilities\Crm.Utilities.csproj" />
+    <ProjectReference Include="..\Crm.ViewModels\Crm.ViewModels.csproj" />
+  </ItemGroup>
+
 </Project>
