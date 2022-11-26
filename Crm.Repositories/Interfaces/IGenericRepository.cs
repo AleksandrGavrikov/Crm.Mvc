@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Crm.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -22,7 +23,7 @@ namespace Crm.Repositories.Interfaces
         Task<T> UpdateAsync(T entity);
         void Delete(T entity);
         Task<T> DeleteAsync(T entity);
-
+        void Add(Room model);
     }
 
    

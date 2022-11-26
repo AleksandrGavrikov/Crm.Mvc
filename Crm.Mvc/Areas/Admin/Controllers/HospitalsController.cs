@@ -4,8 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Crm.Mvc.Areas.Admin.Controllers
 {
+    [Area("admin")]
     public class HospitalsController : Controller
     {
+        
         private IHospitalInfo _hospitalInfo;
         public HospitalsController(IHospitalInfo hospitalInfo)
         {
