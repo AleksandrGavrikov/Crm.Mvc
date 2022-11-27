@@ -1,4 +1,5 @@
-﻿using Crm.Repositories.Interfaces;
+﻿using Crm.Models;
+using Crm.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -116,6 +117,8 @@ namespace Crm.Repositories.Implementation
             _context.Entry(entity).State = EntityState.Modified;
             return entity;
         }
+
+       
     }
     
 }

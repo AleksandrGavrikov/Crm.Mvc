@@ -1,6 +1,7 @@
 ﻿using Crm.Utilities;
 using Crm.ViewModels;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,6 @@ namespace Crm.Services
         void UpdateHospitalInfo(CrmInfoViewModel hospitalInfo);
         void InsertHospitalInfo(CrmInfoViewModel hospitalInfo);
         void DeleteHospitalInfo(int id);
+        
     }
 }
