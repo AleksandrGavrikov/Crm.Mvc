@@ -7,52 +7,53 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Crm.Mvc.Areas.Admin.Controllers
 {
     [Area("admin")]
-    public class RoomsController : Controller
+    public class ContactsController : Controller
     {
-        private IRoomService _room;
+        private IContactService _contact;
         private IHospitalInfo _hospitalInfo;
-        public RoomsController(IRoomService room, IHospitalInfo hospitalInfo)
+        public ContactsController(IContactService contact, IHospitalInfo hospitalInfo)
         {
-            _room = room;
+            _contact = contact;
             _hospitalInfo = hospitalInfo;
         }
 
         public IActionResult Index(int pageNumber = 1, int pageSize = 10)
         {
-            return View(_room.GetAll(pageNumber, pageSize));
+            return View(_contact.GetAll(pageNumber, pageSize));
         }
 
         [HttpGet]
         public IActionResult Edit(int id)
         {
             //ViewBag.hospital = new SelectList(_hospitalInfo.GetAll(), "Id", "Name");
-            var viewModel = _room.GetRoomById(id);
+            var viewModel = _contact.GetContactById(id);
             return View(viewModel);
         }
 
         [HttpPost]
-        public IActionResult Edit(RoomViewModel vm)
+        public IActionResult Edit(ContactViewModel vm)
         {
-            _room.UpdateRoom(vm);
+            _contact.UpdateContact(vm);
             return RedirectToAction("Index");
         }
 
         [HttpGet]
         public IActionResult Create()
         {
+            //ViewBag.hospital = new SelectList(_hospitalInfo.GetAll(), "Id", "Name");
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(RoomViewModel vm)
+        public IActionResult Create(ContactViewModel vm)
         {
-            _room.InsertRoom(vm);
+            _contact.InsertContact(vm);
             return RedirectToAction("Index");
         }
 
         public IActionResult Delete(int id)
         {
-            _room.DeleteRoom(id);
+            _contact.DeleteContact(id);
             return RedirectToAction("Index");
         }
     }

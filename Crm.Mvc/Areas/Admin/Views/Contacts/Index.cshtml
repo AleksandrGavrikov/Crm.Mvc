@@ -1,6 +1,6 @@
 ﻿@using Crm.Utilities
 @using cloudscribe.Pagination.Models
-@model PageResult<Crm.ViewModels.RoomViewModel>
+@model PageResult<Crm.ViewModels.ContactViewModel>
 
 @{
     ViewData["Title"] = "Index";
@@ -18,13 +18,10 @@
                Id
             </th>
             <th>
-              Room Number
+              Email
             </th>
             <th>
-              Type
-            </th>
-            <th>
-              Status
+              Phon No
             </th>
             <th>
               hospital
@@ -39,16 +36,14 @@
                 @Html.DisplayFor(modelItem => item.Id)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RoomNumber)
+                @Html.DisplayFor(modelItem => item.Email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Type)
+                @Html.DisplayFor(modelItem => item.Phone)
             </td>
+           
             <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HospitalInfo.Name)
+                @Html.DisplayFor(modelItem => item.HospitalInfoId)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |

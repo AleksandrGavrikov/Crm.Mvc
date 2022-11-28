@@ -35,7 +35,7 @@ namespace Crm.Services
             {
                 int ExcludeRecords = (pageSize * pageNumber) - pageSize;
 
-                var modelList = _unitOfWork.GenericRepository<Contact>().GetAll()
+                var modelList = _unitOfWork.GenericRepository<Contact>().GetAll(includeProperties:"Hospital")
                     .Skip(ExcludeRecords).Take(pageSize).ToList();
 
                 totalCount = _unitOfWork.GenericRepository<Contact>().GetAll().Count();
